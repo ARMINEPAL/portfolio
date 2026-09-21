@@ -58,3 +58,23 @@ filterButtons.forEach((button) => {
     });
   });
 });
+
+const modal = document.querySelector('.modal');
+const modalImage = document.querySelector('.modal_image');
+
+const demoButtons = document.querySelectorAll('.demo_btn');
+
+demoButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const project = button.closest('.project');
+    const image = project.dataset.image;
+
+    modalImage.src = image;
+    modal.style.display = 'flex';
+  });
+});
+
+const modalClose = document.querySelector('.modal_close');
+modalClose.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
