@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="public/portfolio.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armine Palanjyan |  Frontend Developer </title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/free-resume-icon-svg-download-png-1650533.png" alt="Logo" class="logo">
+      <nav class="header_nav">
+        <ul class="header_list">
+          <li> <a class="header_link" href= "#about">Обо мне</a></li>
+          <li> <a class="header_link" href= "#skills">Навыки</a></li>
+          <li> <a class="header_link" href= "#projects">Проекты</a></li>
+          <li> <a class="header_link" href= "#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="theme_btn" type="button">🌙</button>
+      <button class="menu_btn" type="button">☰</button>
+      <a href="#contacts" class="btn">Связаться</a>
+      </div>
+      
+    </header>
+  
+    <main class="main">
+      <section class="welcome" id="about">
+        <div class="container">
+          <div class="welcome_text">
+            <h1 class="welcome_title">Армине Паланджян</h1>
+          <h3 class="welcome_subtitle">Frontend Developer</h3>
+          <p class="welcome_description">Создаю современные и удобные веб-интерфейсы. Изучаю JavaScript, TypeScript и React, постоянно развиваю свои навыки и превращаю идеи в работающие проекты.</p>
+          </div>
+          <img src="public/free-icon-speech-1474470.png" alt="avatar" class="avatar">
+        </div>
+      </section>
+
+      <section class="skills" id="skills">
+        <h2 class="skills_title">Основные навыки</h2>
+        <div class="container">
+          <div class="skills-list_item">
+            <img src="https://staging.svgrepo.com/show/197982/html.svg" alt="HTML" class="skills-list_img">
+            <h4 class="skills-list_title">HTML</h4>
+          </div>
+          <div class="skills-list_item">
+            <img src="https://www.svgrepo.com/show/452185/css-3.svg" alt="CSS" class="skills-list_img">
+            <h4 class="skills-list_title">CSS</h4>
+          </div>
+          <div class="skills-list_item">
+            <img src="https://freesvg.org/img/1486641506.png" alt="JS" class="skills-list_img">
+            <h4 class="skills-list_title">JS</h4>
+          </div>
+          <div class="skills-list_item">
+            <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/960px-Typescript_logo_2020.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="TypeScript" class="skills-list_img">
+            <h4 class="skills-list_title">TYPESCRIPT</h4>
+          </div>
+          <div class="skills-list_item">
+            <img src="https://www.svgrepo.com/show/443364/brand-react.svg" alt="React" class="skills-list_img">
+            <h4 class="skills-list_title">REACT</h4>
+          </div>
+          <div class="skills-list_item">
+            <img src="https://www.svgrepo.com/show/452093/redux.svg" alt="Redux" class="skills-list_img">
+            <h4 class="skills-list_title">REDUX</h4>
+          </div>
+        </div>
+      </section>
+  
+      <section class="projects" id="projects">
+        <h2 class="projects_title">Мои проекты</h2>
+        <div class="projects_filter">
+          <button class="filter_btn active" data-filter="all">Все</button>
+          <button class="filter_btn" data-filter="javascript">JavaScript</button>
+          <button class="filter_btn" data-filter="react">React</button>
+        </div>
+
+        <div class="container projects_list">
+      
+          <div class="project" data-category="javascript">
+            <img
+             src="/rss-project.png"
+             alt="RSS Aggregator"
+             class="project_img"
+             >
+            <h3 class="project_title">RSS Aggregator</h3>
+      
+            <p class="project_description">
+              Веб-приложение для работы с RSS-лентами.
+              Пользователь может добавлять RSS-источники
+              и просматривать публикации.
+            </p>
+      
+            <p class="project_technologies">
+              JavaScript · Vite · Axios · Yup · Valtio
+            </p>
+      
+            <a
+              href="https://frontend-project-11-1hev.vercel.app/"
+              class="btn"
+              target="_blank"
+            >
+              Посмотреть проект
+            </a>
+          </div>
+      
+          <div class="project" data-category="react">
+            <img
+             src="/chat-project.png"
+             alt="Chat"
+             class="project_img"
+             >
+            <h3 class="project_title">Chat</h3>
+      
+            <p class="project_description">
+              Чат-приложение с авторизацией, каналами
+              и обменом сообщениями в реальном времени.
+            </p>
+      
+            <p class="project_technologies">
+              React · Redux Toolkit · Axios · Socket.IO
+            </p>
+      
+            <a
+              href="https://frontend-project-12-jb7k.onrender.com/"
+              class="btn"
+              target="_blank"
+            >
+              Посмотреть проект
+            </a>
+          </div>
+
+          <div class="project" data-category="all">
+            <h3 class="project_title">Другие проекты</h3>
+          
+            <p class="project_description">
+              Остальные проекты и исходный код можно посмотреть
+              в моём профиле GitHub.
+            </p>
+          
+            <a
+              href="https://github.com/ARMINEPAL"
+              class="btn"
+              target="_blank"
+            >
+              Перейти на GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+  
+      <section class="contacts" id="contacts">
+        <h2 class="contacts_title">Контакты</h2>
+      
+        <div class="container contacts_list">
+      
+          <a href="tel:+995592253501" class="contact">
+            <h3 class="contact_title">Телефон</h3>
+            <p class="contact_text">+995 592 253 501</p>
+          </a>
+      
+          <a href="mailto:armine.palanjyan@student.rau.am" class="contact">
+            <h3 class="contact_title">Email</h3>
+            <p class="contact_text">armine.palanjyan@student.rau.am</p>
+          </a>
+      
+          <a href="https://t.me/Armine2000" class="contact" target="_blank">
+            <h3 class="contact_title">Telegram</h3>
+            <p class="contact_text">@Armine2000</p>
+          </a>
+      
+        </div>
+      </section>
+    </main>
+  
+    <footer class="footer">
+      <p>© 2026 Армине Паланджян</p>
+    </footer>
+     <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
