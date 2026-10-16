@@ -548,6 +548,70 @@ img {
   font-weight: 700;
 }
 
+.certificates {
+  background: var(--bg);
+}
+
+.certificates .section_heading {
+  margin-bottom: 40px;
+}
+
+.certificate_card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.certificate_card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.certificate_image {
+  display: block;
+  width: 150px;
+  max-width: 150px;
+  height: auto;
+  max-height: 270px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.certificate_info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+}
+
+.certificate_info h3 {
+  margin: 0;
+  font-size: 25px;
+  color: var(--text);
+}
+
+.certificate_info p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.certificate_info .btn {
+  margin-top: 8px;
+}
 
 .projects {
   background: var(--surface-alt);
@@ -1104,7 +1168,17 @@ img {
     height: 55px;
   }
 
-
+  .certificate_card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 24px;
+  }
+  
+  .certificate_image {
+    max-width: 100%;
+  }
+  
   .projects_list {
     grid-template-columns: 1fr;
     max-width: 560px;

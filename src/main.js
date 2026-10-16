@@ -1,23 +1,34 @@
-
 import './style.css';
 import i18n from './i18n/index.js';
-
-//language
 
 const languageButtons = document.querySelectorAll('.lang-btn');
 const themeButton = document.querySelector('.theme_btn');
 const menuButton = document.querySelector('.menu_btn');
 const menu = document.querySelector('.header_nav');
+const body = document.body;
+
+function updateMenuLabel() {
+  const isOpen = menu.classList.contains('menu_open');
+
+  menuButton.setAttribute(
+    'aria-label',
+    i18n.t(isOpen ? 'menu.close' : 'menu.open')
+  );
+
+  menuButton.setAttribute('aria-expanded', String(isOpen));
+  menuButton.querySelector('span').textContent = isOpen ? '✕' : '☰';
+}
 
 function updateTranslations() {
   document.querySelectorAll('[data-i18n]').forEach((element) => {
-    const key = element.dataset.i18n;
-    element.textContent = i18n.t(key);
+    element.textContent = i18n.t(element.dataset.i18n);
   });
 
   document.querySelectorAll('[data-i18n-aria-label]').forEach((element) => {
-    const key = element.dataset.i18nAriaLabel;
-    element.setAttribute('aria-label', i18n.t(key));
+    element.setAttribute(
+      'aria-label',
+      i18n.t(element.dataset.i18nAriaLabel)
+    );
   });
 
   document.documentElement.lang = i18n.language;
@@ -44,11 +55,6 @@ languageButtons.forEach((button) => {
 i18n.on('languageChanged', updateTranslations);
 updateTranslations();
 
-//theme
-
-const body = document.body;
-const savedTheme = localStorage.getItem('theme');
-
 function updateThemeButton() {
   const isDark = body.classList.contains('dark_theme');
 
@@ -56,7 +62,7 @@ function updateThemeButton() {
   themeButton.setAttribute('aria-pressed', String(isDark));
 }
 
-if (savedTheme === 'dark') {
+if (localStorage.getItem('theme') === 'dark') {
   body.classList.add('dark_theme');
 }
 
@@ -68,24 +74,8 @@ themeButton.addEventListener('click', () => {
   const isDark = body.classList.contains('dark_theme');
 
   localStorage.setItem('theme', isDark ? 'dark' : 'light');
-
   updateThemeButton();
 });
-
-//menu
-
-function updateMenuLabel() {
-  const isOpen = menu.classList.contains('menu_open');
-
-  menuButton.setAttribute(
-    'aria-label',
-    i18n.t(isOpen ? 'menu.close' : 'menu.open')
-  );
-
-  menuButton.setAttribute('aria-expanded', String(isOpen));
-
-  menuButton.querySelector('span').textContent = isOpen ? '✕' : '☰';
-}
 
 function closeMenu() {
   menu.classList.remove('menu_open');
@@ -111,8 +101,6 @@ document.addEventListener('click', (event) => {
   }
 });
 
-//filters
-
 const filterButtons = document.querySelectorAll('.filter_btn');
 const projects = document.querySelectorAll('.project');
 
@@ -134,8 +122,6 @@ filterButtons.forEach((button) => {
   });
 });
 
-//modal
-
 const modal = document.querySelector('.modal');
 const modalImage = document.querySelector('.modal_image');
 const modalClose = document.querySelector('.modal_close');
@@ -151,7 +137,8 @@ function openModal(project) {
   previousFocusedElement = document.activeElement;
 
   modalImage.src = image;
-  modalImage.alt = project.querySelector('.project_title').textContent;
+  modalImage.alt =
+    project.querySelector('.project_title').textContent;
 
   modal.classList.add('is-open');
   modal.setAttribute('aria-hidden', 'false');
@@ -174,8 +161,7 @@ function closeModal() {
 
 demoButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    const project = button.closest('.project');
-    openModal(project);
+    openModal(button.closest('.project'));
   });
 });
 
@@ -202,8 +188,6 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-
-
 const backToTopButton = document.querySelector('.back-to-top');
 
 function updateBackToTop() {
@@ -219,13 +203,13 @@ updateBackToTop();
 backToTopButton.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
-    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-      ? 'instant'
+    behavior: window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
+      ? 'auto'
       : 'smooth',
   });
 });
-
-//contact
 
 const contactForm = document.querySelector('#contact-form');
 const formStatus = document.querySelector('.form_status');

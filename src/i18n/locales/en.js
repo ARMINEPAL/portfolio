@@ -6,6 +6,7 @@ export default {
         skills: 'Skills',
         projects: 'Projects',
         contacts: 'Contact',
+        certificates: 'Certificates'
       },
   
       hero: {
@@ -24,6 +25,14 @@ export default {
         title: 'Skills & Technologies',
         description:
           'Technologies I use to build modern web applications.',
+      },
+
+      certificates: {
+        eyebrow: 'EDUCATION & CERTIFICATIONS',
+        title: 'My Education',
+        course: 'Frontend Developer',
+        description: 'Completed the Frontend Development program at Hexlet.',
+        view: 'View Certificate ↗',
       },
   
       projects: {
